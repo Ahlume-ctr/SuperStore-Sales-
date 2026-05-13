@@ -1,4 +1,5 @@
 -- Databricks notebook source
+--DATA CLEANING
 
 SELECT TRY_CAST(GET(SPLIT(transaction_id, "T"), 1) AS INT) AS Transaction_Id,
           transaction_date AS Transaction_Date,
@@ -64,8 +65,8 @@ SELECT
        Product_Name,
           ROUND(SUM(Quantity*Unit_Price), 2) AS Revenue_Discounted
 FROM workspace.default.super_store_sales_dataset_1
-WHERE 
-       Discount_Pct > 0 --Applies in a query that has an Aggregate function only when the Column_Name is not aggregated and must appear before the GROUP BY
+WHERE                  --Applies in a query that has an Aggregate function only when the Column_Name is not aggregated and must appear before the GROUP BY
+       Discount_Pct > 0 
 GROUP BY
        Product_Name
 ORDER BY 
@@ -77,8 +78,8 @@ SELECT
        Product_Name,
           ROUND(SUM(Quantity*Unit_Price), 2) AS Revenue_Undiscounted
 FROM workspace.default.super_store_sales_dataset_1
-WHERE 
-       Discount_Pct = 0 --Applies in a query that has an Aggregate function only when the Column_Name is not aggregated and must appear before the GROUP BY
+WHERE                  --Applies in a query that has an Aggregate function only when the Column_Name is not aggregated and must appear before the GROUP BY
+       Discount_Pct = 0 
 GROUP BY 
        Product_Name
 ORDER BY 
@@ -95,11 +96,14 @@ ORDER BY
        Total_Revenue DESC;
 
 
---REGIONAL PERFORMANCE
-SELECT Region,
-       ROUND(SUM(Sales_Amount)) AS Total_Revenue
+--6. REGIONAL PERFORMANCE
+SELECT 
+        Region,
+               ROUND(SUM(Sales_Amount)) AS Total_Revenue
 FROM workspace.default.super_store_sales_dataset_1
-GROUP BY Region
-ORDER BY Total_Revenue ASC;
+GROUP BY 
+        Region
+ORDER BY 
+        Total_Revenue ASC;
 
 
