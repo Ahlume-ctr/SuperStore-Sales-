@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The Retail SuperSales Analysis Dashboard is a modern business intelligence project designed to transform raw retail transaction data into actionable business insights. This project focuses on analyzing sales performance, customer behavior, product efficiency, regional trends, and profitability using SQL-powered data analytics and an AI-assisted smart dashboard.
+The Retail SuperSales Analysis Dashboard is a modern business intelligence project designed to transform raw retail transaction data into actionable business insights. This project focuses on analyzing sales performance, customer behavior, product efficiency, regional trends, and profitability using SQL powered data analytics and an AI-assisted smart dashboard.
 
 The project was developed using SQL in Databricks for data cleaning, transformation, and analysis, while Lovable was used to engineer an interactive executive-style dashboard for data visualization and business reporting.
 
